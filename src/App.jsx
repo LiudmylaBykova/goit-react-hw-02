@@ -20,6 +20,7 @@ function App() {
 
   const totalFeedback =
     feedbackStates.good + feedbackStates.neutral + feedbackStates.bad;
+
   const positiveFeedback =
     totalFeedback > 0
       ? Math.round(
@@ -57,12 +58,14 @@ function App() {
         resetFeedback={resetFeedback}
         totalFeedback={totalFeedback}
       />
+      {totalFeedback > 0 && (
+        <Feedback
+          states={feedbackStates}
+          totalFeedback={totalFeedback}
+          positiveFeedback={positiveFeedback}
+        />
+      )}
       {!totalFeedback && <Notification />}
-      <Feedback
-        states={feedbackStates}
-        totalFeedback={totalFeedback}
-        positiveFeedback={positiveFeedback}
-      />
     </>
   );
 }

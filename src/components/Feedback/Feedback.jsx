@@ -7,26 +7,24 @@ const Feedback = ({
 }) => {
   return (
     <>
-      {totalFeedback > 0 && (
-        <ul className={css.feedbackList}>
-          <li className={css.feedbackItem}>
-            Good: <span className={css.feedbackSpan}>{good}</span>
-          </li>
-          <li className={css.feedbackItem}>
-            Neutral: <span className={css.feedbackSpan}>{neutral}</span>
-          </li>
-          <li className={css.feedbackItem}>
-            Bad: <span className={css.feedbackSpan}>{bad}</span>
-          </li>
-          <li className={css.feedbackItem}>
-            Total: <span className={css.feedbackSpan}>{totalFeedback}</span>
-          </li>
-          <li className={css.feedbackItem}>
-            Positive:{" "}
-            <span className={css.feedbackSpan}>{positiveFeedback}%</span>
-          </li>
-        </ul>
-      )}
+      <ul className={css.feedbackList}>
+        <li className={css.feedbackItem}>
+          Good: <span className={css.feedbackSpan}>{good}</span>
+        </li>
+        <li className={css.feedbackItem}>
+          Neutral: <span className={css.feedbackSpan}>{neutral}</span>
+        </li>
+        <li className={css.feedbackItem}>
+          Bad: <span className={css.feedbackSpan}>{bad}</span>
+        </li>
+        <li className={css.feedbackItem}>
+          Total: <span className={css.feedbackSpan}>{totalFeedback}</span>
+        </li>
+        <li className={css.feedbackItem}>
+          Positive:{" "}
+          <span className={css.feedbackSpan}>{positiveFeedback}%</span>
+        </li>
+      </ul>
     </>
   );
 };
