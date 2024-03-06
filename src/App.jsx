@@ -36,10 +36,10 @@ function App() {
   }, [feedbackStates]);
 
   const updateFeedback = (feedbackType) => {
-    setFeedbackStates({
-      ...feedbackStates,
-      [feedbackType]: feedbackStates[feedbackType] + 1,
-    });
+    setFeedbackStates((prevFeedbackStates) => ({
+      ...prevFeedbackStates,
+      [feedbackType]: prevFeedbackStates[feedbackType] + 1,
+    }));
   };
 
   const resetFeedback = () => {
@@ -58,14 +58,15 @@ function App() {
         resetFeedback={resetFeedback}
         totalFeedback={totalFeedback}
       />
-      {totalFeedback > 0 && (
+      {totalFeedback > 0 ? (
         <Feedback
           states={feedbackStates}
           totalFeedback={totalFeedback}
           positiveFeedback={positiveFeedback}
         />
+      ) : (
+        <Notification />
       )}
-      {!totalFeedback && <Notification />}
     </>
   );
 }
